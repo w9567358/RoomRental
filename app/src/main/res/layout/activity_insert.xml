@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".insert">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:orientation="vertical">
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/NPM"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="NPM"
+                android:inputType="text"
+                android:layout_margin="10dp"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/NAMA"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="NAMA"
+                android:inputType="text"
+                android:layout_margin="10dp"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/KELAS"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="KELAS"
+                android:inputType="text"
+                android:layout_margin="10dp"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/PRODI"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="PRODI"
+                android:inputType="text"
+                android:layout_margin="10dp"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <Button
+            android:id="@+id/btn_save"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Simpan Data"
+            android:layout_margin="10dp"/>
+
+
+
+
+    </LinearLayout>
+</ScrollView>
