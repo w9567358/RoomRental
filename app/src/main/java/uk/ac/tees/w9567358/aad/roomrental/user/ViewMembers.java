@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import uk.ac.tees.w9567358.aad.roomrental.MemberModel;
 import uk.ac.tees.w9567358.aad.roomrental.R;
 import uk.ac.tees.w9567358.aad.roomrental.adapter.SeeMemberAdapterOwner;
-import uk.ac.tees.w9567358.aad.roomrental.houseOwner.RegisterOwner;
+
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -58,7 +58,7 @@ public class ViewMembers extends AppCompatActivity {
         FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
 
         if (firebaseUser.getUid() != null) {
-            DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child(RegisterOwner.MEMBERS).child(userId).child(houseId);
+            DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("members").child(userId).child(houseId);
             reference.addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {

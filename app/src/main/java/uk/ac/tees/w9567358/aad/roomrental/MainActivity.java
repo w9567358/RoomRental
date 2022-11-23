@@ -7,7 +7,6 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import uk.ac.tees.w9567358.aad.roomrental.houseOwner.LoginOwner;
 import uk.ac.tees.w9567358.aad.roomrental.user.LoginUser;
 
 public class MainActivity extends AppCompatActivity {
@@ -21,13 +20,6 @@ public class MainActivity extends AppCompatActivity {
 
         btn_houseOwner = findViewById(R.id.btn_houseOwner);
         btn_user = findViewById(R.id.btn_user);
-
-        btn_houseOwner.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, LoginOwner.class));
-            }
-        });
 
         btn_user.setOnClickListener(new View.OnClickListener() {
             @Override
