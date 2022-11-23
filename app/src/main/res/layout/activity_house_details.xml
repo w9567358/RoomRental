@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFDD0"
+
     tools:context=".houseOwner.HouseDetails">
 
     <androidx.appcompat.widget.Toolbar
@@ -38,7 +38,7 @@
         android:layout_below="@id/toolbar"
         android:gravity="center"
         android:orientation="horizontal"
-        android:background="#FFFDD0">
+       >
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -50,7 +50,7 @@
                 android:layout_height="200dp"
                 android:layout_marginTop="16dp"
                 android:scaleType="fitXY"
-                android:src="@drawable/logo" />
+                android:src="@drawable/roombg" />
 
             <LinearLayout
                 android:id="@+id/ll_usernameCSE"

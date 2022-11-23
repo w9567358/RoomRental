@@ -60,7 +60,7 @@
                         android:layout_weight="1"
                         android:ellipsize="end"
                         android:padding="5dp"
-                        android:text="Rent Per Rooms : 2000"
+                        android:text="Rent Per Rooms : £100"
                         android:textColor="@color/black"
                         android:textSize="15dp" />
 
@@ -71,7 +71,7 @@
                         android:layout_weight="1"
                         android:ellipsize="end"
                         android:padding="5dp"
-                        android:text="Model Town, Sector-7, Panipat, Haryana"
+                        android:text="South Field Road, Middlesbrough, TS1 2AB"
                         android:textColor="@color/black"
                         android:textSize="15dp" />
 

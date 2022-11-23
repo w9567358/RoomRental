@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFDD0"
     android:orientation="vertical"
     tools:context=".user.LoginUser">
 
@@ -19,7 +18,7 @@
             android:layout_height="200dp"
             android:layout_marginTop="40dp"
             android:scaleType="fitXY"
-            android:src="@drawable/logo" />
+            android:src="@drawable/roombg" />
 
         <TextView
             android:layout_width="wrap_content"

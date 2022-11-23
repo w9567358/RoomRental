@@ -18,7 +18,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        btn_houseOwner = findViewById(R.id.btn_houseOwner);
         btn_user = findViewById(R.id.btn_user);
 
         btn_user.setOnClickListener(new View.OnClickListener() {
