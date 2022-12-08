@@ -1,4 +1,4 @@
-package uk.ac.tees.w9567358.aad.roomrental.user;
+package uk.ac.tees.w9567358.aad.roomrental.houseOwner;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import uk.ac.tees.w9567358.aad.roomrental.MemberModel;
 import uk.ac.tees.w9567358.aad.roomrental.R;
 import uk.ac.tees.w9567358.aad.roomrental.adapter.SeeMemberAdapterOwner;
-import uk.ac.tees.w9567358.aad.roomrental.houseOwner.RegisterOwner;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -24,9 +23,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 public class ViewMembers extends AppCompatActivity {
-
     String houseId;
-    String userId;
     private RecyclerView rv_showAllFood;
     private SeeMemberAdapterOwner adapter;
     private ArrayList<MemberModel> mList = new ArrayList<>();
@@ -34,7 +31,7 @@ public class ViewMembers extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_members2);
+        setContentView(R.layout.activity_view_members);
 
         Intent intent = getIntent();
         houseId = intent.getStringExtra("houseId");
@@ -43,7 +40,7 @@ public class ViewMembers extends AppCompatActivity {
         String houseDescription = intent.getStringExtra("houseDescription");
         String houseLocation = intent.getStringExtra("houseLocation");
         String houseImage = intent.getStringExtra("houseImage");
-        userId = intent.getStringExtra("userId");
+        String userId = intent.getStringExtra("userId");
 
         rv_showAllFood = findViewById(R.id.recyclerView);
         rv_showAllFood.setHasFixedSize(true);
@@ -56,7 +53,7 @@ public class ViewMembers extends AppCompatActivity {
     private void getAllArticle() {
 
         FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-
+        String userId = firebaseUser.getUid();
         if (firebaseUser.getUid() != null) {
             DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child(RegisterOwner.MEMBERS).child(userId).child(houseId);
             reference.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -79,6 +76,5 @@ public class ViewMembers extends AppCompatActivity {
             });
         }
     }
-
 
 }

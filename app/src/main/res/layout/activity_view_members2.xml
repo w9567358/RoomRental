@@ -22,7 +22,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:text="Members"
+                android:text="Members Area"
                 android:textColor="#03A9F4"
                 android:textSize="20sp"
                 android:textStyle="bold" />

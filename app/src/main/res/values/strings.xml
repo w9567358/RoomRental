@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Room Rental App</string>
     <string name="title_app">Romm Rental Applicationt</string>
+    <string name="add_houses">Add Houses</string>
 </resources>

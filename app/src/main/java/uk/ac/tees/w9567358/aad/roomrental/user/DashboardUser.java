@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import uk.ac.tees.w9567358.aad.roomrental.HouseModel;
 import uk.ac.tees.w9567358.aad.roomrental.R;
 import uk.ac.tees.w9567358.aad.roomrental.adapter.SeeHouseAdapterUser;
+import uk.ac.tees.w9567358.aad.roomrental.houseOwner.RegisterOwner;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -52,7 +53,7 @@ public class DashboardUser extends AppCompatActivity {
         FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         String userId = firebaseUser.getUid();
         if (firebaseUser.getUid() != null) {
-            DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("houses");
+            DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child(RegisterOwner.HOUSES);
             reference.addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {

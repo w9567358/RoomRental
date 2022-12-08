@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".user.HouseDetails"
-   >
+    android:background="#FFFDD0">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -49,7 +49,7 @@
                 android:layout_height="200dp"
                 android:layout_marginTop="16dp"
                 android:scaleType="fitXY"
-                android:src="@drawable/roombg" />
+                android:src="@drawable/logo" />
 
             <LinearLayout
                 android:id="@+id/ll_usernameCSE"

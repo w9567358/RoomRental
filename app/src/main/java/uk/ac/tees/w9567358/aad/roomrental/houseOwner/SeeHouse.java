@@ -1,18 +1,15 @@
-package uk.ac.tees.w9567358.aad.roomrental.user;
+package uk.ac.tees.w9567358.aad.roomrental.houseOwner;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import uk.ac.tees.w9567358.aad.roomrental.MemberModel;
+import uk.ac.tees.w9567358.aad.roomrental.HouseModel;
 import uk.ac.tees.w9567358.aad.roomrental.R;
-import uk.ac.tees.w9567358.aad.roomrental.adapter.SeeMemberAdapterOwner;
-import uk.ac.tees.w9567358.aad.roomrental.houseOwner.RegisterOwner;
+import uk.ac.tees.w9567358.aad.roomrental.adapter.SeeHouseAdapterOwner;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -23,31 +20,20 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class ViewMembers extends AppCompatActivity {
+public class SeeHouse extends AppCompatActivity {
 
-    String houseId;
-    String userId;
     private RecyclerView rv_showAllFood;
-    private SeeMemberAdapterOwner adapter;
-    private ArrayList<MemberModel> mList = new ArrayList<>();
+    private SeeHouseAdapterOwner adapter;
+    private ArrayList<HouseModel> mList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_members2);
-
-        Intent intent = getIntent();
-        houseId = intent.getStringExtra("houseId");
-        String noOfRoom = intent.getStringExtra("noOfRoom");
-        String rentPerRoom = intent.getStringExtra("rentPerRoom");
-        String houseDescription = intent.getStringExtra("houseDescription");
-        String houseLocation = intent.getStringExtra("houseLocation");
-        String houseImage = intent.getStringExtra("houseImage");
-        userId = intent.getStringExtra("userId");
+        setContentView(R.layout.activity_see_house);
 
         rv_showAllFood = findViewById(R.id.recyclerView);
         rv_showAllFood.setHasFixedSize(true);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(ViewMembers.this);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(SeeHouse.this);
         rv_showAllFood.setLayoutManager(linearLayoutManager);
         getAllArticle();
 
@@ -56,19 +42,20 @@ public class ViewMembers extends AppCompatActivity {
     private void getAllArticle() {
 
         FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+        String userId = firebaseUser.getUid();
 
         if (firebaseUser.getUid() != null) {
-            DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child(RegisterOwner.MEMBERS).child(userId).child(houseId);
+            DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child(RegisterOwner.HOUSES).child(userId);
+
             reference.addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                     mList.clear();
                     for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
-                        MemberModel article = dataSnapshot.getValue(MemberModel.class);
+                        HouseModel article = dataSnapshot.getValue(HouseModel.class);
                         mList.add(article);
                     }
-                    Log.d("TAG1", "onDataChange: " + mList.get(0).getName());
-                    adapter = new SeeMemberAdapterOwner(ViewMembers.this, mList);
+                    adapter = new SeeHouseAdapterOwner(SeeHouse.this, mList);
                     rv_showAllFood.setAdapter(adapter);
                 }
 
@@ -79,6 +66,4 @@ public class ViewMembers extends AppCompatActivity {
             });
         }
     }
-
-
 }

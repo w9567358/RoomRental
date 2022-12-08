@@ -31,7 +31,28 @@
         <activity
             android:name=".user.HouseDetails"
             android:exported="true" />
-
+        <activity
+            android:name=".houseOwner.HouseDetails"
+            android:exported="true" />
+        <activity
+            android:name=".houseOwner.ViewLocation"
+            android:exported="true" />
+        <activity
+            android:name=".houseOwner.ViewMembers"
+            android:exported="true" />
+        <activity
+            android:name=".houseOwner.AddMember"
+            android:exported="true" />
+        <activity
+            android:name=".houseOwner.SeeHouse"
+            android:exported="true" />
+        <activity
+            android:name=".houseOwner.AddHouse"
+            android:exported="true" />
+        <activity
+            android:name=".houseOwner.DashboardOwner"
+            android:exported="true"
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".user.DashboardUser"
             android:exported="true"
@@ -39,19 +60,28 @@
         <activity
             android:name=".user.ResetPasswordUser"
             android:exported="true"
-            android:theme="@style/Theme.RoomRental.AppCompat.Light.NoActionBar"/>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
         <activity
             android:name=".user.LoginUser"
             android:exported="true" />
         <activity
             android:name=".user.RegisterUser"
             android:exported="true" />
-
+        <activity
+            android:name=".houseOwner.ResetPasswordOwenr"
+            android:exported="true" />
+        <activity
+            android:name=".houseOwner.LoginOwner"
+            android:exported="true" />
+        <activity
+            android:name=".houseOwner.RegisterOwner"
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
