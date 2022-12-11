@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/homeFragment" android:title="Home" app:showAsAction="never" android:icon="@drawable/ic_home"/>
+    <item android:id="@+id/mapsFragment" android:title="Map Directions" app:showAsAction="never" android:icon="@drawable/ic_direction"/>
+    <item android:id="@+id/favoriteFragment" android:title="Fav" app:showAsAction="never" android:icon="@drawable/ic_favorite"/>
+    <item android:id="@+id/chatFragment" android:title="Delete" app:showAsAction="never" android:icon="@drawable/ic_chat"/>
+
+</menu>

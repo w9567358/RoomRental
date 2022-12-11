@@ -2,13 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="uk.ac.tees.w9567358.aad.roomrental">
 
-
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.SEND_SMS" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
 
 
     <application
@@ -19,71 +18,28 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RoomRental"
         >
-        <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyAstRLiJWR9LOpxICg2CdXkGFbTZSV41BA" />
         <activity
-            android:name=".user.ViewLocation"
-            android:exported="true" />
-        <activity
-            android:name=".user.ViewMembers"
-            android:exported="true" />
-        <activity
-            android:name=".user.HouseDetails"
-            android:exported="true" />
-        <activity
-            android:name=".houseOwner.HouseDetails"
-            android:exported="true" />
-        <activity
-            android:name=".houseOwner.ViewLocation"
-            android:exported="true" />
-        <activity
-            android:name=".houseOwner.ViewMembers"
-            android:exported="true" />
-        <activity
-            android:name=".houseOwner.AddMember"
-            android:exported="true" />
-        <activity
-            android:name=".houseOwner.SeeHouse"
-            android:exported="true" />
-        <activity
-            android:name=".houseOwner.AddHouse"
-            android:exported="true" />
-        <activity
-            android:name=".houseOwner.DashboardOwner"
-            android:exported="true"
-            android:parentActivityName=".MainActivity"/>
-        <activity
-            android:name=".user.DashboardUser"
-            android:exported="true"
-            android:parentActivityName=".MainActivity"/>
-        <activity
-            android:name=".user.ResetPasswordUser"
-            android:exported="true"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
-        <activity
-            android:name=".user.LoginUser"
-            android:exported="true" />
-        <activity
-            android:name=".user.RegisterUser"
-            android:exported="true" />
-        <activity
-            android:name=".houseOwner.ResetPasswordOwenr"
-            android:exported="true" />
-        <activity
-            android:name=".houseOwner.LoginOwner"
-            android:exported="true" />
-        <activity
-            android:name=".houseOwner.RegisterOwner"
-            android:exported="true" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="true">
+            android:name=".SplashScreenActivity"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".activies.AddActivity" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity
+            android:name=".activies.HomeActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name=".activies.SignUpActivity" />
+        <activity
+            android:name=".activies.LogInActivity"
+            android:exported="true">
         </activity>
     </application>
 

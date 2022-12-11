@@ -1,5 +1,15 @@
 <resources>
     <string name="app_name">Room Rental App</string>
-    <string name="title_app">Romm Rental Applicationt</string>
+    <string name="title_app">Romm Rental Application</string>
     <string name="add_houses">Add Houses</string>
+
+    <string-array name="saleOrRent">
+        <item>Sale</item>
+        <item>Rent</item>
+
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="google_maps_key">AIzaSyBZ00DKHRP8nWF4c1BRz7IGPVRE4Urv8Fk</string>
+    <string name="welcome_to_room">Room Rental App</string>
 </resources>
