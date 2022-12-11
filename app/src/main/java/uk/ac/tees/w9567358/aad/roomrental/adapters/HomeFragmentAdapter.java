@@ -21,6 +21,7 @@ import uk.ac.tees.w9567358.aad.roomrental.R;
 import uk.ac.tees.w9567358.aad.roomrental.models.Post;
 import uk.ac.tees.w9567358.aad.roomrental.ui.HomeFragmentDirections;
 
+
 public class HomeFragmentAdapter extends RecyclerView.Adapter<HomeFragmentAdapter.MyViewHolder> {
 
      List<Post> postList;

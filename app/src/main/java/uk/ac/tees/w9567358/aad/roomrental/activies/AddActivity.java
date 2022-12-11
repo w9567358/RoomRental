@@ -64,8 +64,6 @@ public class AddActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add);
-
-
         mAuth = FirebaseAuth.getInstance();
         user = mAuth.getCurrentUser();
         db = FirebaseFirestore.getInstance();
@@ -73,10 +71,6 @@ public class AddActivity extends AppCompatActivity {
         storageReference = firebaseStorage.getReference();
 
         back = findViewById(R.id.backAdd);
-
-        latitude = findViewById(R.id.locationLatitude);
-        longitude = findViewById(R.id.locationLongitude);
-        locationText = findViewById(R.id.locationAdd);
 
         imageView = findViewById(R.id.uploadImage);
         phone = findViewById(R.id.phoneAdd);
