@@ -85,9 +85,6 @@ public class AddActivity extends AppCompatActivity {
 
         viewModel = new ViewModelProvider(this).get(HomeFragmentViewModel.class);
         addPostButton = findViewById(R.id.addPostBtn);
-
-
-
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -100,10 +97,8 @@ public class AddActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sharePost(phone.getText().toString(),description.getText().toString(),attribute.getText().toString(),sq.getText().toString(),rentOrSale.getText().toString(),bedCount.getText().toString(),bathCount.getText().toString(),price.getText().toString()
-                ,locationText.getText().toString(),latitude.getText().toString(),longitude.getText().toString()
+                ,"Middlesbrough","53.53","-1.23"
                 );
-
-
             }
         });
 
